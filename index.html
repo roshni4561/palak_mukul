@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Eternal Love Story</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:wght@500&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #ff4d6d;
+            --secondary: #ff8fa3;
+            --accent: #ffb3c1;
+            --dark: #590d22;
+            --light: #fff0f3;
+            --gold: #ffd700;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--light), #ffccd5);
+            color: var(--dark);
+            overflow-x: hidden;
+            min-height: 100vh;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Styles */
+        header {
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 5px 20px rgba(89, 13, 34, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            padding: 15px 0;
+            background: rgba(255, 255, 255, 0.98);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Dancing Script', cursive;
+            font-size: 32px;
+            font-weight: 700;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo i {
+            margin-right: 10px;
+            font-size: 36px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            font-size: 18px;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            z-index: 2;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            color: var(--dark);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .couple-names {
+            font-size: 3rem;
+            font-weight: bold;
+            font-family: 'Dancing Script', cursive;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 30px 0;
+        }
+
+        .heart {
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin: 0 15px;
+            animation: pulse 1.5s infinite;
+            display: inline-block;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.3); }
+            100% { transform: scale(1); }
+        }
+
+        /* Floating Hearts Background */
+        .floating-hearts {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .heart-shape {
+            position: absolute;
+            font-size: 20px;
+            color: rgba(255, 77, 109, 0.5);
+            animation: floatHeart 15s linear infinite;
+            z-index: -1;
+        }
+
+        @keyframes floatHeart {
+            0% {
+                top: 110%;
+                transform: translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                top: -10%;
+                transform: translateX(100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Photos Section */
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 60px;
+            position: relative;
+            color: var(--dark);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 150px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .photos {
+            padding: 100px 0;
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .photo-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(89, 13, 34, 0.2);
+            transition: all 0.3s ease;
+            height: 300px;
+            background: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .photo-item:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(89, 13, 34, 0.3);
+        }
+
+        .photo-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s ease;
+        }
+
+        .photo-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(89, 13, 34, 0.8);
+            color: white;
+            padding: 15px;
+            transform: translateY(100%);
+            transition: all 0.3s ease;
+        }
+
+        .photo-item:hover .photo-caption {
+            transform: translateY(0);
+        }
+
+        /* Birthday Section */
+        .birthday {
+            padding: 100px 0;
+            background: linear-gradient(to bottom, #ffccd5, #ffb3c1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .birthday::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text x="50%" y="50%" font-size="20" fill="rgba(255,215,0,0.1)" text-anchor="middle" dominant-baseline="middle">🎂</text></svg>');
+            background-size: 100px 100px;
+            z-index: 1;
+        }
+
+        .birthday-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .birthday-title {
+            text-align: center;
+            font-size: 3.5rem;
+            margin-bottom: 40px;
+            color: var(--dark);
+            font-family: 'Dancing Script', cursive;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .birthday-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+
+        .birthday-item {
+            border-radius: 15px;
+            overflow: hidden;
+            height: 100%;
+            width: 100%;
+            box-shadow: 0 8px 25px rgba(89, 13, 34, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .birthday-item:hover {
+            transform: translateY(-5px) rotate(2deg);
+            box-shadow: 0 12px 30px rgba(89, 13, 34, 0.3);
+        }
+
+        .birthday-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .birthday-videos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .birthday-video {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(89, 13, 34, 0.2);
+            background: var(--dark);
+            height: 100%;
+            position: relative;
+            width: 100%;
+        }
+
+        .birthday-video video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .birthday-quotes {
+            margin-top: 70px;
+            text-align: center;
+        }
+
+        .birthday-quote {
+            font-size: 1.8rem;
+            font-style: italic;
+            color: var(--dark);
+            margin-bottom: 30px;
+            font-family: 'Playfair Display', serif;
+            padding: 0 20px;
+        }
+
+        /* Videos Section */
+        .videos {
+            padding: 100px 0;
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .video-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .video-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(89, 13, 34, 0.2);
+            background: var(--dark);
+            height: 100%;
+            width: 100%;
+        }
+
+        .video-item video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .video-controls {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(89, 13, 34, 0.8);
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .control-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .control-btn:hover {
+            background: var(--secondary);
+            transform: scale(1.1);
+        }
+
+        /* Quotes Section */
+        .quotes {
+            padding: 100px 0;
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .quote-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            height: 300px;
+        }
+
+        .quote-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: all 0.5s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(89, 13, 34, 0.1);
+        }
+
+        .quote-slide.active {
+            opacity: 1;
+        }
+
+        .quote-text {
+            font-size: 1.8rem;
+            font-style: italic;
+            margin-bottom: 20px;
+            color: var(--dark);
+            line-height: 1.6;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .quote-author {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .quote-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+            gap: 15px;
+        }
+
+        .quote-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--accent);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .quote-dot.active {
+            background: var(--primary);
+            transform: scale(1.3);
+        }
+
+        /* Memories Timeline */
+        .timeline {
+            padding: 100px 0;
+            background: linear-gradient(to bottom, #ffb3c1, #ff8fa3);
+            position: relative;
+        }
+
+        .timeline-title {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 60px;
+            color: var(--dark);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .timeline-container {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: white;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+            border-radius: 10px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+            margin-bottom: 50px;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .timeline-content {
+            padding: 20px;
+            background-color: white;
+            position: relative;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline-date {
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .timeline-text {
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .footer-heart {
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin: 20px 0;
+            animation: pulse 1.5s infinite;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: all 0.3s ease;
+            font-size: 20px;
+        }
+
+        .social-icons a:hover {
+            background: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .gallery, .video-gallery, .birthday-gallery, .birthday-videos {
+                grid-template-columns: 1fr;
+            }
+            
+            .couple-names {
+                font-size: 2rem;
+            }
+            
+            .quote-text {
+                font-size: 1.3rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .timeline-container::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+        }
+
+        /* Animation Classes */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Page Navigation */
+        .page-nav {
+            display: flex;
+            justify-content: center;
+            margin: 50px 0;
+            gap: 15px;
+        }
+
+        .page-btn {
+            padding: 12px 25px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .page-btn:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+        }
+
+        /* Modal for Image View */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            overflow: auto;
+        }
+
+        .modal-content {
+            display: block;
+            margin: auto;
+            max-width: 90%;
+            max-height: 80%;
+            margin-top: 50px;
+            border-radius: 10px;
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <i class="fas fa-heart"></i>
+                    <span>Our Eternal Love</span>
+                </div>
+                <div class="nav-links">
+                    <a href="#photos">Photos</a>
+                    <a href="#birthday">Birthday</a>
+                    <a href="#videos">Videos</a>
+                    <a href="#quotes">Love Quotes</a>
+                    <a href="#timeline">Our Story</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="floating-hearts" id="hearts-container"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1>A Story Written with Love</h1>
+                <div class="couple-names">
+                    <span>Mukul</span> 
+                    <i class="fas fa-heart heart"></i> 
+                    <span>Palak</span>
+                </div>
+                <p>Every moment with you is a blessing I cherish. This website is a collection of our beautiful memories together.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photos Section -->
+    <section id="photos" class="photos">
+        <div class="container">
+            <h2 class="section-title">Our Photos</h2>
+            <div class="gallery">
+                <!-- Replace these with your actual photos -->
+                <div class="photo-item animate-on-scroll">
+                    <img src="./photos/first/IMG_5416.JPG" alt="First Meet">
+                    <div class="photo-caption">The day we first met - A moment forever cherished</div>
+                </div>
+                <div class="photo-item animate-on-scroll">
+                    <img src="./photos/2/IMG_6201.jpeg" alt="Beach Sunset">
+                    <div class="photo-caption">Watching sunsets together, hand in hand</div>
+                </div>
+                <div class="photo-item animate-on-scroll">
+                    <img src="./photos/3/IMG_0454.jpeg" alt="Winter Magic">
+                    <div class="photo-caption">Winter walks and warm embraces</div>
+                </div>
+                <div class="photo-item animate-on-scroll">
+                    <img src="./photos/4/IMG_5805.jpeg" alt="Anniversary">
+                    <div class="photo-caption">Celebrating another year of love</div>
+                </div>
+                <div class="photo-item animate-on-scroll">
+                    <img src="./photos/5/IMG_6072(1).jpeg" alt="Adventure">
+                    <div class="photo-caption">Exploring the world together</div>
+                </div>
+                <div class="photo-item animate-on-scroll">
+                    <img src="./photos/holi/IMG_5826.jpeg" alt="Cozy Night">
+                    <div class="photo-caption">Cozy nights and heartfelt conversations</div>
+                </div>
+            </div>
+            
+            <div class="page-nav">
+                <button class="page-btn">1</button>
+                <button class="page-btn">2</button>
+                <button class="page-btn">3</button>
+                <button class="page-btn">Next →</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Birthday Section -->
+    <section id="birthday" class="birthday">
+        <div class="container birthday-content">
+            <h2 class="birthday-title">Special Birthday Memories</h2>
+            
+            <div class="birthday-gallery">
+                <!-- Birthday photos - replace with your actual photos -->
+                <div class="birthday-item animate-on-scroll">
+                    <img src="./photos/bday/FullSizeRender 15.JPG" alt="Birthday 1">
+                </div>
+                <div class="birthday-item animate-on-scroll">
+                    <img src="./photos/bday/IMG_0009.jpeg" alt="Birthday 2">
+                </div>
+                <div class="birthday-item animate-on-scroll">
+                    <img src="./photos/bday/IMG_0018.jpeg" alt="Birthday 3">
+                </div>
+                <div class="birthday-item animate-on-scroll">
+                    <img src="./photos/bday/IMG_0039.JPG" alt="Birthday 4">
+                </div>
+                <div class="birthday-item animate-on-scroll">
+                    <img src="./photos/bday/IMG_0076.jpeg" alt="Birthday 5">
+                </div>
+                <div class="birthday-item animate-on-scroll">
+                    <img src="./photos/bday/IMG_0078.jpeg" alt="Birthday 6">
+                </div>
+                 <div class="birthday-item animate-on-scroll">
+                    <img src="./photos/bday/IMG_0079.jpeg" alt="Birthday 6">
+                </div>
+                 <div class="birthday-item animate-on-scroll">
+                    <img src="./photos/bday/IMG_0098.jpeg" alt="Birthday 6">
+                </div>
+            </div>
+             <div class="birthday-gallery">
+                <!-- Birthday photos - replace with your actual photos -->
+                <div class="birthday-item animate-on-scroll">
+                    <img src="./photos/bday/sss/IMG_0094.jpeg" alt="Birthday 1">
+                </div>
+                <div class="birthday-item animate-on-scroll">
+                    <img src="./photos/bday/sss/IMG_0118.jpeg" alt="Birthday 2">
+                </div>
+                <div class="birthday-item animate-on-scroll">
+                    <img src="./photos/bday/sss/IMG_0096.jpeg" alt="Birthday 3">
+                </div>
+                <div class="birthday-item animate-on-scroll">
+                    <img src="/photos/bday/sss/IMG_0097.jpeg" alt="Birthday 4">
+                </div>
+                <div class="birthday-item animate-on-scroll">
+                    <img src="/photos/bday/sss/IMG_0102.jpeg" alt="Birthday 5">
+                </div>
+                <div class="birthday-item animate-on-scroll">
+                    <img src="/photos/bday/sss/IMG_0103.jpeg" alt="Birthday 6">
+                </div>
+                 <div class="birthday-item animate-on-scroll">
+                    <img src="/photos/bday/sss/IMG_0105.jpeg" alt="Birthday 6">
+                </div>
+                 <div class="birthday-item animate-on-scroll">
+                    <img src="/photos/bday/sss/IMG_0107.jpeg" alt="Birthday 6">
+                </div>
+            </div>
+            
+                <h2 class="birthday-title">Meri palak ka bday alag alag song me</h2>
+            
+            <div class="birthday-videos">
+                <!-- Birthday videos - replace with your actual videos -->
+                <div class="birthday-video animate-on-scroll">
+<video src="./photos/bday/video/WhatsApp Video 2025-08-27 at 3.58.55 PM (3).mp4"></video>
+                    <div class="video-controls">
+                        <button class="control-btn play-pause"><i class="fas fa-play"></i></button>
+                        <button class="control-btn mute"><i class="fas fa-volume-up"></i></button>
+                    </div>
+                </div>
+                <div class="birthday-video animate-on-scroll">
+                    <video src="./photos/bday/video/WhatsApp Video 2025-08-27 at 3.58.55 PM (5).mp4"></video>
+                    <div class="video-controls">
+                        <button class="control-btn play-pause"><i class="fas fa-play"></i></button>
+                        <button class="control-btn mute"><i class="fas fa-volume-up"></i></button>
+                    </div>
+                </div>
+                <div class="birthday-video animate-on-scroll">
+                          <video src="./photos/bday/video/WhatsApp Video 2025-08-27 at 3.58.55 PM (7).mp4"></video>
+                    <div class="video-controls">
+                        <button class="control-btn play-pause"><i class="fas fa-play"></i></button>
+                        <button class="control-btn mute"><i class="fas fa-volume-up"></i></button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="birthday-quotes">
+                <p class="birthday-quote">"On your special day, I celebrate the beautiful person you are and the joy you bring to my life every day."</p>
+                <p class="birthday-quote">"Happy birthday to the one who makes my heart skip a beat with every smile."</p>
+            </div>
+              <h2 class="birthday-title">Our 1st Best Meet_up in Sagar </h2>
+            
+            <div class="birthday-gallery">
+                <!-- Birthday photos - replace with your actual photos -->
+                <div class="birthday-item animate-on-scroll">
+                    <img src="./photos/sagar1/IMG_9362.jpg" alt="Birthday 1">
+                </div>
+                <div class="birthday-item animate-on-scroll">
+                    <img src="./photos/sagar1/IMG_9375.jpg" alt="Birthday 2">
+                </div>
+                <div class="birthday-item animate-on-scroll">
+                    <img src="./photos/sagar1/IMG_9385.jpg" alt="Birthday 3">
+                </div>
+                <div class="birthday-item animate-on-scroll">
+                    <img src="./photos/sagar1/IMG_9386.jpg" alt="Birthday 4">
+                </div>
+                <div class="birthday-item animate-on-scroll">
+                    <img src="./photos/sagar1/IMG_9445.jpg" alt="Birthday 5">
+                </div>
+                <div class="birthday-item animate-on-scroll">
+                    <img src="./photos/sagar1/IMG_9420.jpg" alt="Birthday 6">
+                </div>
+                 <div class="birthday-item animate-on-scroll">
+                    <img src="./photos/sagar1/IMG_9434.jpg" alt="Birthday 6">
+                </div>
+                 <div class="birthday-item animate-on-scroll">
+                    <img src="./photos/sagar1/IMG_9474.JPG" alt="Birthday 6">
+                </div>
+            </div>
+              <h2 class="birthday-title">Our 2nd Best Meet_up in Sagar </h2>
+
+             <div class="birthday-gallery">
+                <!-- Birthday photos - replace with your actual photos -->
+                <div class="birthday-item animate-on-scroll">
+                    <img src="./photos/sagar2/IMG_0031.jpeg" alt="Birthday 1">
+                </div>
+                <div class="birthday-item animate-on-scroll">
+                    <img src="./photos/sagar2/IMG_9769.jpg" alt="Birthday 2">
+                </div>
+                <div class="birthday-item animate-on-scroll">
+                    <img src="./photos/sagar2/IMG_9772.jpg" alt="Birthday 3">
+                </div>
+                <div class="birthday-item animate-on-scroll">
+                    <img src="./photos/sagar2/IMG_9810.jpg" alt="Birthday 4">
+                </div>
+                <div class="birthday-item animate-on-scroll">
+ <img src="./photos/sagar2/IMG_9823.jpeg" alt="Birthday 4">
+                </div>
+                <div class="birthday-item animate-on-scroll">
+ <img src="./photos/sagar2/IMG_9838.jpg" alt="Birthday 4">
+                </div>
+                 <div class="birthday-item animate-on-scroll">
+ <img src="./photos/sagar2/IMG_9864.jpg" alt="Birthday 4">
+                </div>
+                 <div class="birthday-item animate-on-scroll">
+ <img src="./photos/sagar2/IMG_9878.jpeg" alt="Birthday 4">
+                </div>
+            </div>
+            <div class="page-nav">
+                <button class="page-btn">More Birthday Photos →</button>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Videos Section -->
+    <section id="videos" class="videos">
+        <div class="container">
+            <h2 class="section-title">Our Videos</h2>
+            <div class="video-gallery">
+                <!-- Replace these with your actual videos -->
+                <div class="video-item animate-on-scroll">
+                    <video src="./photos/v2/WhatsApp Video 2025-08-27 at 3.58.55 PM (1).mp4"></video>
+                    <div class="video-controls">
+                        <button class="control-btn play-pause"><i class="fas fa-play"></i></button>
+                        <button class="control-btn mute"><i class="fas fa-volume-up"></i></button>
+                    </div>
+                </div>
+                <div class="video-item animate-on-scroll">
+                    <video src="./photos/v2/WhatsApp Video 2025-08-27 at 3.58.55 PM (2).mp4"></video>
+                  
+                    <div class="video-controls">
+                        <button class="control-btn play-pause"><i class="fas fa-play"></i></button>
+                        <button class="control-btn mute"><i class="fas fa-volume-up"></i></button>
+                    </div>
+                </div>
+                <div class="video-item animate-on-scroll">
+                    <video src="./photos/v2/WhatsApp Video 2025-08-27 at 3.58.55 PM (4).mp4"></video>
+                    <div class="video-controls">
+                        <button class="control-btn play-pause"><i class="fas fa-play"></i></button>
+                        <button class="control-btn mute"><i class="fas fa-volume-up"></i></button>
+                    </div>
+                </div>
+                <div class="video-item animate-on-scroll">
+                    <video src="./photos/v2/WhatsApp Video 2025-08-27 at 3.58.55 PM (6).mp4"></video>
+                    <div class="video-controls">
+                        <button class="control-btn play-pause"><i class="fas fa-play"></i></button>
+                        <button class="control-btn mute"><i class="fas fa-volume-up"></i></button>
+                    </div>
+                </div>
+                <div class="video-item animate-on-scroll">
+                    <video src="./photos/v2/WhatsApp Video 2025-08-27 at 3.58.55 PM (8).mp4"></video>
+                    <div class="video-controls">
+                        <button class="control-btn play-pause"><i class="fas fa-play"></i></button>
+                        <button class="control-btn mute"><i class="fas fa-volume-up"></i></button>
+                    </div>
+                </div>
+                <div class="video-item animate-on-scroll">
+                    <video src="./photos/v2/WhatsApp Video 2025-08-27 at 3.58.55 PM.mp4"></video>
+                    <div class="video-controls">
+                        <button class="control-btn play-pause"><i class="fas fa-play"></i></button>
+                        <button class="control-btn mute"><i class="fas fa-volume-up"></i></button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="page-nav">
+                <button class="page-btn">1</button>
+                <button class="page-btn">2</button>
+                <button class="page-btn">3</button>
+                <button class="page-btn">Next →</button>
+            </div>
+        </div>
+        
+    </section>
+
+    <!-- Quotes Section -->
+    <section id="quotes" class="quotes">
+        <div class="container">
+            <h2 class="section-title">Love Quotes</h2>
+            <div class="quote-slider">
+                <div class="quote-slide active">
+                    <p class="quote-text">"I saw that you were perfect, and so I loved you. Then I saw that you were not perfect and I loved you even more."</p>
+                    <p class="quote-author">- Angelita Lim</p>
+                </div>
+                <div class="quote-slide">
+                    <p class="quote-text">"You are the source of my joy, the center of my world, and the whole of my heart."</p>
+                    <p class="quote-author">- Unknown</p>
+                </div>
+                <div class="quote-slide">
+                    <p class="quote-text">"I love you not only for what you are but for what I am when I am with you."</p>
+                    <p class="quote-author">- Elizabeth Barrett Browning</p>
+                </div>
+                <div class="quote-slide">
+                    <p class="quote-text">"In all the world, there is no heart for me like yours. In all the world, there is no love for you like mine."</p>
+                    <p class="quote-author">- Maya Angelou</p>
+                </div>
+            </div>
+            <div class="quote-nav">
+                <div class="quote-dot active"></div>
+                <div class="quote-dot"></div>
+                <div class="quote-dot"></div>
+                <div class="quote-dot"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section id="timeline" class="timeline">
+        <div class="container">
+            <h2 class="timeline-title">Our Story</h2>
+            <div class="timeline-container">
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2016</div>
+                        <div class="timeline-text">The day we first met. I Drop her to their Home</div>
+                    </div>
+                </div>
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-content">
+                        <div class="timeline-date">8 June 2024</div>
+                        <div class="timeline-text">I see her bday story and i wish her on but see did't see my msg then i arrange her digit and call her but she a low confident girl after that one of my friend gf call her then she talk then also she will quite then i decided that i have to do somethings and then i will become her teacher and carreer guider</div>
+                    </div>
+                </div>
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-content">
+                        <div class="timeline-date">22 Dec</div>
+                        <div class="timeline-text">we meet at Csb</div>
+                    </div>
+                </div>
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-content">
+                        <div class="timeline-date">7 March 2025</div>
+                        <div class="timeline-text">we meet in farmhouse and i kiss her on forhead first time</div>
+                    </div>
+                </div>
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-content">
+                        <div class="timeline-date">9 March 2025</div>
+                        <div class="timeline-text">she come in my family funciton with her family </div>
+                    </div>
+                </div>
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Holi </div>
+                        <div class="timeline-text">Then we meet up on the day of holi and chelebrate holi </div>
+                    </div>
+                </div>
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-content">
+                        <div class="timeline-date">10 May 2025</div>
+                        <div class="timeline-text">Breakup and she will move on</div>
+                    </div>
+
+                </div>
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-content">
+                        <div class="timeline-date">27  May 2025</div>
+                        <div class="timeline-text">Patch Up</div>
+                    </div>
+                </div>
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-content">
+                        <div class="timeline-date">6 June 2025</div>
+                        <div class="timeline-text">I am go to sagar to pick her to askn for her bday chelebratation </div>
+                    </div>
+                </div>
+                 <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-content">
+                        <div class="timeline-date">8 June 2025</div>
+                        <div class="timeline-text">Bday chelebratation  </div>
+                    </div>
+                </div>
+                    <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-content">
+                        <div class="timeline-date">10 June 2025</div>
+                        <div class="timeline-text"> 10 i will drop her to sagar after her bday then she caught her and i know that she is cheat on me but that thing i already know after somedays of realtionship but i am silent i am waiting for her moment when she is tell me but unfornotnlly she will cautght and on that time also i will forgive her and will we make strong bond that time   </div>
+                    </div>
+                </div>
+                    <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-content">
+                        <div class="timeline-date">17 June 2025</div>
+                        <div class="timeline-text">Our first best sagar meet up us din merko usne first time apne hatho se khana khila tha and on that time i really fall in love with her too much wesh to me usko bahut pyaar krta tha but uss din se jnda ho gya tha
+                             </div>
+                    </div>
+                </div>
+                    <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-content">
+                        <div class="timeline-date">3 July 2025</div>
+                        <div class="timeline-text">our 2nd sagar meet its also a our best meetup becz she wear a dress that i like so much and on that time she face so much struggle to come to my place and one thing i love that i call her and i tell her baby my train is late could you able to come here and she will come in one call iss din uss phir se dil jeet liya   </div>
+                    </div>
+                </div>
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-content">
+                        <div class="timeline-date">3 Aug 2025</div>
+                        <div class="timeline-text">when i go to vippsan she face bad days their after that her nature will change for me and our so many fights will happens when i go from their </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="couple-names">
+                    <span>Mukul</span> 
+                    <i class="fas fa-heart footer-heart"></i> 
+                    <span>Palak</span>
+                </div>
+                <p>Made with love for the most special person in my life</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Our Eternal Love Story. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <script>
+        // Create floating hearts
+        function createHearts() {
+            const container = document.getElementById('hearts-container');
+            const heartSymbols = ['❤️', '💕', '💖', '💗', '💓', '💘', '💞'];
+            
+            for (let i = 0; i < 25; i++) {
+                const heart = document.createElement('div');
+                heart.classList.add('heart-shape');
+                heart.innerHTML = heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
+                
+                // Random position and animation delay
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.animationDelay = Math.random() * 15 + 's';
+                heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
+                
+                container.appendChild(heart);
+            }
+        }
+        
+        // Video controls functionality
+        document.querySelectorAll('.video-item, .birthday-video').forEach(videoItem => {
+            const video = videoItem.querySelector('video');
+            const playPauseBtn = videoItem.querySelector('.play-pause');
+            const muteBtn = videoItem.querySelector('.mute');
+            const playIcon = playPauseBtn.querySelector('i');
+            
+            playPauseBtn.addEventListener('click', () => {
+                if (video.paused) {
+                    video.play();
+                    playIcon.classList.remove('fa-play');
+                    playIcon.classList.add('fa-pause');
+                } else {
+                    video.pause();
+                    playIcon.classList.remove('fa-pause');
+                    playIcon.classList.add('fa-play');
+                }
+            });
+            
+            muteBtn.addEventListener('click', () => {
+                video.muted = !video.muted;
+                const muteIcon = muteBtn.querySelector('i');
+                muteIcon.classList.toggle('fa-volume-up');
+                muteIcon.classList.toggle('fa-volume-mute');
+            });
+        });
+
+        // Quote slider functionality
+        const quoteSlides = document.querySelectorAll('.quote-slide');
+        const quoteDots = document.querySelectorAll('.quote-dot');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            quoteSlides.forEach(slide => slide.classList.remove('active'));
+            quoteDots.forEach(dot => dot.classList.remove('active'));
+            
+            quoteSlides[index].classList.add('active');
+            quoteDots[index].classList.add('active');
+            currentSlide = index;
+        }
+
+        quoteDots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                showSlide(index);
+            });
+        });
+
+        // Auto advance quotes
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % quoteSlides.length;
+            showSlide(currentSlide);
+        }, 5000);
+
+        // Scroll animation
+        function checkScroll() {
+            const elements = document.querySelectorAll('.animate-on-scroll');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if (elementPosition < screenPosition) {
+                    element.classList.add('animated');
+                }
+            });
+        }
+
+        // Header scroll effect
+        function updateHeader() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        }
+
+        // Image modal functionality
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImage');
+        const closeModal = document.querySelector('.close');
+
+        document.querySelectorAll('.photo-item img, .birthday-item img').forEach(img => {
+            img.addEventListener('click', () => {
+                modal.style.display = 'block';
+                modalImg.src = img.src;
+            });
+        });
+
+        closeModal.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+        // Initialize everything
+        window.addEventListener('load', () => {
+            createHearts();
+            checkScroll();
+            updateHeader();
+        });
+
+        window.addEventListener('scroll', () => {
+            checkScroll();
+            updateHeader();
+        });
+    </script>
+</body>
+</html>
